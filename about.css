@@ -1,0 +1,133 @@
+body {
+    font-family: Arial, sans-serif;
+    color: #fff; /* Text color for dark theme */
+    background-color: #222; /* Background color for dark theme */
+    margin: 0;
+  }
+
+header{
+    margin-left: 200px;
+    margin-top: 100px;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+nav {
+
+    display: flex;
+    padding: 5px;
+    border-radius: 22px;
+    margin-left: 155px;
+    margin-top: 20;
+    height: 50px;
+    width: fit-content;
+    filter: drop-shadow(2px 8px 20px black);
+    }
+    
+body{
+      background-color: #ffffff;
+  }
+    nav>a {
+    color: black;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 7px;
+    align-items: center;
+    font-size: 30px;
+    padding-left: 40px;
+    color: #287542;
+    }    
+    
+nav>a:hover {
+    color: rgb(0, 0, 0);
+    }
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #333; /* Container background for dark theme */
+    border: 1px solid #444; /* Border color for dark theme */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Shadow for dark theme */
+    border-radius: 10px;
+  }
+
+
+
+  .team-member {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #444;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 40%; /* adjust the width to make them side by side */
+    margin: 20px; /* add some margin to create space between them */
+  }
+  
+  .container h1 {
+    font-weight: bold;
+    color: #fff; /* Text color for dark theme */
+    font-size: 200%;
+  }
+
+
+  
+  .team-member-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .team-member img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 70px;
+    margin-bottom: 20px;
+  }
+  
+  .team-member h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  
+  .team-member p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  
+  .team-member.social-links {
+    margin-top: 20px;
+  }
+  
+  .team-member.bio {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  ul {
+    list-style: none;
+    padding: 20px;
+    /* color: #ddd; /* Text color for list items in dark theme */
+   }
+p{
+      padding: 10px;
+    border-bottom: 1px solid #444; /* Border color for list items in dark theme */
+}
+li {
+    padding: 10px;
+    border-bottom: 1px solid #444; /* Border color for list items in dark theme */
+  }
+  /* add this to make them side by side */
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+.team-member:hover,.team-member:focus {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(253, 253, 253, 0.2);
+  }
+

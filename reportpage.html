@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EYES4NAIJA-Security Reports</title>
+    <link href="WhatsApp_Image_2024-06-25_at_7.06.42_PM-removebg-preview.png" rel="icon">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+.full-report {
+    display: none;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #2e2929;
+    border-radius: 10px;
+}
+.full-report h4, .full-report p {
+    color: #000; /* Black text */
+    font-weight: bold; /* Bold text */
+    font-size: 16px; /* Larger text size */
+}
+.report-container {
+    max-width: 950px; /* Set a maximum width for the container */
+    margin: 40px auto; /* Add some margin to center the container */
+    padding: 20px; /* Add some padding to create some space around the content */
+    background-color: #333; /* Add a light gray background color */
+    border: 1px solid #ddd; /* Add a light gray border */
+    border-radius: 10px; /* Add some rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add some subtle shadow effect */
+    text-align: center;
+
+}
+#report-list {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    margin-top: 20px;
+
+
+}
+.report:hover {
+    background-color: #287542 ; /* Brown color on hover */
+}
+.report a {
+    text-decoration: none;
+    color: #000000;
+}
+.report a:hover {
+    text-decoration: underline;
+}
+.report {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+/* #state, #timeInterval {
+    margin-right: 30px;
+} */
+
+#filter {
+    padding: 30px;
+}
+#submit {
+    margin-top: 20px;
+    
+}
+#fil {
+    text-align: right;
+    margin-right: 15px;
+}
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <img src="WhatsApp Image 2024-06-25 at 7.06.42 PM.jpeg" 
+        alt="" 
+        style="  
+               background-size: 20px 20px; 
+               padding: 5px; 
+               border-radius: 20%; 
+               width: 50px; 
+               height: 50px;">
+
+        
+    </header>
+    <nav>
+        <a href="index.html"> Home </a>
+        <a href="about.html"> About </a>
+        <a href="reportpage.html"> View Reports </a>
+        <a href="safetyttips.html"> Safety Tips </a>
+        <a href="emergency.html"> Emergency Hotlines </a>
+    </nav>
+    <div class="report-container">
+        <div id="filter">
+            <h1 style="text-align: center;">SECURITY REPORTS</h1>
+
+        <form>
+            <label for="state">Filter by State:</label>
+            <select id="state" name="state">
+                <option value="">Select State</option>
+                <option value="Abia">Abia</option>
+                <option value="Adamawa">Adamawa</option>
+                <option value="Akwa Ibom">Akwa Ibom</option>
+                <option value="Anambra">Anambra</option>
+                <option value="Bauchi">Bauchi</option>
+                <option value="Bayelsa">Bayelsa</option>
+                <option value="Benue">Benue</option>
+                <option value="Borno">Borno</option>
+                <option value="Cross River">Cross River</option>
+                <option value="Delta">Delta</option>
+                <option value="Ebonyi">Ebonyi</option>
+                <option value="Edo">Edo</option>
+                <option value="Ekiti">Ekiti</option>
+                <option value="Enugu">Enugu</option>
+                <option value="Gombe">Gombe</option>
+                <option value="Imo">Imo</option>
+                <option value="Jigawa">Jigawa</option>
+                <option value="Kaduna">Kaduna</option>
+                <option value="Kano">Kano</option>
+                <option value="Katsina">Katsina</option>
+                <option value="Kebbi">Kebbi</option>
+                <option value="Kogi">Kogi</option>
+                <option value="Kwara">Kwara</option>
+                <option value="Lagos">Lagos</option>
+                <option value="Nasarawa">Nasarawa</option>
+                <option value="Niger">Niger</option>
+                <option value="Ogun">Ogun</option>
+                <option value="Ondo">Ondo</option>
+                <option value="Osun">Osun</option>
+                <option value="Oyo">Oyo</option>
+                <option value="Plateau">Plateau</option>
+                <option value="Rivers">Rivers</option>
+                <option value="Sokoto">Sokoto</option>
+                <option value="Taraba">Taraba</option>
+                <option value="Yobe">Yobe</option>
+                <option value="Zamfara">Zamfara</option>
+            </select>
+    
+            <label for="timeInterval">Filter by Time Interval:</label>
+            <select id="timeInterval" name="timeInterval">
+                <option value="">Select Time Interval</option>
+                <option value="24hrs">24 Hours</option>
+                <option value="12hrs">12 Hours</option>
+                <option value="3days">3 Days</option>
+                <option value="1week">1 Week</option>
+                <!-- Add more time intervals as needed -->
+            </select>
+    
+            <label for="crimeCategory">Filter by Crime Category:</label>
+            <select id="crimeCategory" name="crimeCategory">
+                <option value="">Select Crime Category</option>
+                <option value="Violent Crime">Violent Crime</option>
+                <option value="Financial Crimes">Financial Crimes</option>
+                <option value="Property Theft/Damage">Property Theft/Damage</option>
+                <option value="Drug Offenses">Drug Offenses</option>
+                <option value="White Collar Crime">White Collar Crime</option>
+                <!-- Add more crime categories as needed -->
+            </select>
+    
+            <div id="fil"><button type="submit" id="submit">Apply Filters</button></div>
+        </form>
+    
+        </div>
+    </div>
+
+    <ul id="report-list">
+        <!-- Report list will be populated dynamically using JavaScript -->
+    </ul>
+
+    <script>
+        const reports = [
+            // Add more reports as needed
+            {
+            "_id": "1",
+            "reportHeadline": "Robbery in Lagos",
+            "reportText": "A robbery occurred at a bank in Lagos on January 1, 2022.",
+            "state": "Lagos",
+            "timeInterval": "24hrs",
+            "crimeCategory": "Violent Crime"
+        },
+        {
+            "_id": "2",
+            "reportHeadline": "Drug Bust in Abuja",
+            "reportText": "A drug bust operation was carried out in Abuja on January 2, 2022.",
+            "state": "Abuja",
+            "timeInterval": "12hrs",
+            "crimeCategory": "Drug Offenses"
+        },
+        {
+            "_id": "3",
+            "reportHeadline": "Theft in Oyo",
+            "reportText": "A theft incident was reported in Oyo on January 3, 2022.",
+            "state": "Oyo",
+            "timeInterval": "3days",
+            "crimeCategory": "Property Theft/Damage"
+        },
+        {
+            "_id": "4",
+            "reportHeadline": "White Collar Crime in Rivers",
+            "reportText": "A white collar crime was reported in Rivers on January 4, 2022.",
+            "state": "Rivers",
+            "timeInterval": "1week",
+            "crimeCategory": "White Collar Crime"
+        },
+        {
+            "_id": "5",
+            "reportHeadline": "Financial Crime in Kano",
+            "reportText": "A financial crime was reported in Kano on January 5, 2022.",
+            "state": "Kano",
+            "timeInterval": "24hrs",
+            "crimeCategory": "Financial Crimes"
+        },
+        {
+            "_id": "6",
+            "reportHeadline": "Violent Crime in Abia",
+            "reportText": "A violent crime was reported in Abia on January 6, 2022.",
+            "state": "Abia",
+            "timeInterval": "12hrs",
+            "crimeCategory": "Violent Crime"
+        },
+        {
+            "_id": "7",
+            "reportHeadline": "Property Theft in Adamawa",
+            "reportText": "A property theft incident was reported in Adamawa on January 7, 2022.",
+            "state": "Adamawa",
+            "timeInterval": "3days",
+            "crimeCategory": "Property Theft/Damage"
+        },
+        {
+            "_id": "8",
+            "reportHeadline": "Drug Offenses in Akwa Ibom",
+            "reportText": "A drug offense was reported in Akwa Ibom on January 8, 2022.",
+            "state": "Akwa Ibom",
+            "timeInterval": "1week",
+            "crimeCategory": "Drug Offenses"
+        },
+        {
+            "_id": "9",
+            "reportHeadline": "White Collar Crime in Anambra",
+            "reportText": "A white collar crime was reported in Anambra on January 9, 2022.",
+            "state": "Anambra",
+            "timeInterval": "24hrs",
+            "crimeCategory": "White Collar Crime"
+        },
+        {
+            "_id": "10",
+            "reportHeadline": "Financial Crimes in Bauchi",
+            "reportText": "A financial crime was reported in Bauchi on January 10, 2022.",
+            "state": "Bauchi",
+            "timeInterval": "12hrs",
+            "crimeCategory": "Financial Crimes"
+        },
+        {
+            "_id": "11",
+            "reportHeadline": "Violent Crime in Bayelsa",
+            "reportText": "A violent crime was reported in Bayelsa on January 11, 2022.",
+            "state": "Bayelsa",
+            "timeInterval": "3days",
+            "crimeCategory": "Violent Crime"
+        },
+        {
+            "_id": "12",
+            "reportHeadline": "Property Theft in Benue",
+            "reportText": "A property theft incident was reported in Benue on January 12, 2022.",
+            "state": "Benue",
+            "timeInterval": "1week",
+            "crimeCategory": "Property Theft/Damage"
+        },
+        {
+            "_id": "13",
+            "reportHeadline": "Drug Offenses in Borno",
+            "reportText": "A drug offense was reported in Borno on January 13, 2022.",
+            "state": "Borno",
+            "timeInterval": "24hrs",
+            "crimeCategory": "Drug Offenses"
+        },
+        {
+            "_id": "14",
+            "reportHeadline": "White Collar Crime in Cross River",
+            "reportText": "A white collar crime was reported in Cross River on January 14, 2022.",
+            "state": "Cross River",
+            "timeInterval": "12hrs",
+            "crimeCategory": "White Collar Crime"
+        },
+        {
+            "_id": "15",
+            "reportHeadline": "Financial Crimes in Delta",
+            "reportText": "A financial crime was reported in Delta on January 15, 2022.",
+            "state": "Delta",
+            "timeInterval": "3days",
+            "crimeCategory": "Financial Crimes"
+        },
+        {
+            "_id": "16",
+            "reportHeadline": "Violent Crime in Ebonyi",
+            "reportText": "A violent crime was reported in Ebonyi on January 16, 2022.",
+            "state": "Ebonyi",
+            "timeInterval": "1week",
+            "crimeCategory": "Violent Crime"
+        },
+        {
+            "_id": "17",
+            "reportHeadline": "Property Theft in Edo",
+            "reportText": "A property theft incident was reported in Edo on January 17, 2022.",
+            "state": "Edo",
+            "timeInterval": "24hrs",
+            "crimeCategory": "Property Theft/Damage"
+        },
+        {
+            "_id": "18",
+            "reportHeadline": "Drug Offenses in Ekiti",
+            "reportText": "A drug offense was reported in Ekiti on January 18, 2022.",
+            "state": "Ekiti",
+            "timeInterval": "12hrs",
+            "crimeCategory": "Drug Offenses"
+        },
+        {
+            "_id": "19",
+            "reportHeadline": "White Collar Crime in Enugu",
+            "reportText": "A white collar crime was reported in Enugu on January 19, 2022.",
+            "state": "Enugu",
+            "timeInterval": "3days",
+            "crimeCategory": "White Collar Crime"
+        },
+        {
+            "_id": "20",
+            "reportHeadline": "Financial Crimes in Gombe",
+            "reportText": "A financial crime was reported in Gombe on January 20, 2022.",
+            "state": "Gombe",
+            "timeInterval": "1week",
+            "crimeCategory": "Financial Crimes"
+        },
+        {
+            "_id": "21",
+            "reportHeadline": "Violent Crime in Imo",
+            "reportText": "A violent crime was reported in Imo on January 21, 2022.",
+            "state": "Imo",
+            "timeInterval": "24hrs",
+            "crimeCategory": "Violent Crime"
+        },
+        {
+            "_id": "22",
+            "reportHeadline": "Property Theft in Jigawa",
+            "reportText": "A property theft incident was reported in Jigawa on January 22, 2022.",
+            "state": "Jigawa",
+            "timeInterval": "12hrs",
+            "crimeCategory": "Property Theft/Damage"
+        },
+        {
+            "_id": "23",
+            "reportHeadline": "Drug Offenses in Kaduna",
+            "reportText": "A drug offense was reported in Kaduna on January 23, 2022.",
+            "state": "Kaduna",
+            "timeInterval": "3days",
+            "crimeCategory": "Drug Offenses"
+        },
+        {
+            "_id": "24",
+            "reportHeadline": "White Collar Crime in Kano",
+            "reportText": "A white collar crime was reported in Kano on January 24, 2022.",
+            "state": "Kano",
+            "timeInterval": "1week",
+            "crimeCategory": "White Collar Crime"
+        },
+        {
+            "_id": "25",
+            "reportHeadline": "Financial Crimes in Katsina",
+            "reportText": "A financial crime was reported in Katsina on January 25, 2022.",
+            "state": "Katsina",
+            "timeInterval": "24hrs",
+            "crimeCategory": "Financial Crimes"
+        },
+        {
+            "_id": "26",
+            "reportHeadline": "Violent Crime in Kebbi",
+            "reportText": "A violent crime was reported in Kebbi on January 26, 2022.",
+            "state": "Kebbi",
+            "timeInterval": "12hrs",
+            "crimeCategory": "Violent Crime"
+        },
+        {
+            "_id": "27",
+            "reportHeadline": "Property Theft in Kogi",
+            "reportText": "A property theft incident was reported in Kogi on January 27, 2022.",
+            "state": "Kogi",
+            "timeInterval": "3days",
+            "crimeCategory": "Property Theft/Damage"
+        },
+        {
+            "_id": "28",
+            "reportHeadline": "Drug Offenses in Kwara",
+            "reportText": "A drug offense was reported in Kwara on January 28, 2022.",
+            "state": "Kwara",
+            "timeInterval": "1week",
+            "crimeCategory": "Drug Offenses"
+        },
+        {
+            "_id": "29",
+            "reportHeadline": "White Collar Crime in Lagos",
+            "reportText": "A white collar crime was reported in Lagos on January 29, 2022.",
+            "state": "Lagos",
+            "timeInterval": "24hrs",
+            "crimeCategory": "White Collar Crime"
+        },
+        {
+            "_id": "30",
+            "reportHeadline": "Financial Crimes in Nasarawa",
+            "reportText": "A financial crime was reported in Nasarawa on January 30, 2022.",
+            "state": "Nasarawa",
+            "timeInterval": "12hrs",
+            "crimeCategory": "Financial Crimes"
+        },
+        {
+            "_id": "31",
+            "reportHeadline": "Violent Crime in Niger",
+            "reportText": "A violent crime was reported in Niger on January 31, 2022.",
+            "state": "Niger",
+            "timeInterval": "3days",
+            "crimeCategory": "Violent Crime"
+        },
+        {
+            "_id": "32",
+            "reportHeadline": "Property Theft in Ogun",
+            "reportText": "A property theft incident was reported in Ogun on February 1, 2022.",
+            "state": "Ogun",
+            "timeInterval": "1week",
+            "crimeCategory": "Property Theft/Damage"
+        },
+        {
+            "_id": "33",
+            "reportHeadline": "Drug Offenses in Ondo",
+            "reportText": "A drug offense was reported in Ondo on February 2, 2022.",
+            "state": "Ondo",
+            "timeInterval": "24hrs",
+            "crimeCategory": "Drug Offenses"
+        },
+        {
+            "_id": "34",
+            "reportHeadline": "White Collar Crime in Osun",
+            "reportText": "A white collar crime was reported in Osun on February 3, 2022.",
+            "state": "Osun",
+            "timeInterval": "12hrs",
+            "crimeCategory": "White Collar Crime"
+        },
+        {
+            "_id": "35",
+            "reportHeadline": "Financial Crimes in Oyo",
+            "reportText": "A financial crime was reported in Oyo on February 4, 2022.",
+            "state": "Oyo",
+            "timeInterval": "3days",
+            "crimeCategory": "Financial Crimes"
+        },
+        {
+            "_id": "36",
+            "reportHeadline": "Violent Crime in Plateau",
+            "reportText": "A violent crime was reported in Plateau on February 5, 2022.",
+            "state": "Plateau",
+            "timeInterval": "1week",
+            "crimeCategory": "Violent Crime"
+        },
+        {
+            "_id": "37",
+            "reportHeadline": "Property Theft in Rivers",
+            "reportText": "A property theft incident was reported in Rivers on February 6, 2022.",
+            "state": "Rivers",
+            "timeInterval": "24hrs",
+            "crimeCategory": "Property Theft/Damage"
+        },
+        {
+            "_id": "38",
+            "reportHeadline": "Drug Offenses in Sokoto",
+            "reportText": "A drug offense was reported in Sokoto on February 7, 2022.",
+            "state": "Sokoto",
+            "timeInterval": "12hrs",
+            "crimeCategory": "Drug Offenses"
+        },
+        {
+            "_id": "39",
+            "reportHeadline": "White Collar Crime in Taraba",
+            "reportText": "A white collar crime was reported in Taraba on February 8, 2022.",
+            "state": "Taraba",
+            "timeInterval": "3days",
+            "crimeCategory": "White Collar Crime"
+        },
+        {
+            "_id": "40",
+            "reportHeadline": "Financial Crimes in Yobe",
+            "reportText": "A financial crime was reported in Yobe on February 9, 2022.",
+            "state": "Yobe",
+            "timeInterval": "1week",
+            "crimeCategory": "Financial Crimes"
+        },
+        {
+            "_id": "41",
+            "reportHeadline": "Violent Crime in Zamfara",
+            "reportText": "A violent crime was reported in Zamfara on February 10, 2022.",
+            "state": "Zamfara",
+            "timeInterval": "24hrs",
+            "crimeCategory": "Violent Crime"
+        },
+        {
+            "_id": "42",
+            "reportHeadline": "Property Theft in Abia",
+            "reportText": "A property theft incident was reported in Abia on February 11, 2022.",
+            "state": "Abia",
+            "timeInterval": "12hrs",
+            "crimeCategory": "Property Theft/Damage"
+        },
+        {
+            "_id": "43",
+            "reportHeadline": "Drug Offenses in Adamawa",
+            "reportText": "A drug offense was reported in Adamawa on February 12, 2022.",
+            "state": "Adamawa",
+            "timeInterval": "3days",
+            "crimeCategory": "Drug Offenses"
+        },
+        {
+            "_id": "44",
+            "reportHeadline": "White Collar Crime in Akwa Ibom",
+            "reportText": "A white collar crime was reported in Akwa Ibom on February 13, 2022.",
+            "state": "Akwa Ibom",
+            "timeInterval": "1week",
+            "crimeCategory": "White Collar Crime"
+        },
+        {
+            "_id": "45",
+            "reportHeadline": "Financial Crimes in Anambra",
+            "reportText": "A financial crime was reported in Anambra on February 14, 2022.",
+            "state": "Anambra",
+            "timeInterval": "24hrs",
+            "crimeCategory": "Financial Crimes"
+        },
+        {
+            "_id": "46",
+            "reportHeadline": "Violent Crime in Bauchi",
+            "reportText": "A violent crime was reported in Bauchi on February 15, 2022.",
+            "state": "Bauchi",
+            "timeInterval": "12hrs",
+            "crimeCategory": "Violent Crime"
+        },
+        {
+            "_id": "47",
+            "reportHeadline": "Property Theft in Bayelsa",
+            "reportText": "A property theft incident was reported in Bayelsa on February 16, 2022.",
+            "state": "Bayelsa",
+            "timeInterval": "3days",
+            "crimeCategory": "Property Theft/Damage"
+        },
+        {
+            "_id": "48",
+            "reportHeadline": "Drug Offenses in Benue",
+            "reportText": "A drug offense was reported in Benue on February 17, 2022.",
+            "state": "Benue",
+            "timeInterval": "1week",
+            "crimeCategory": "Drug Offenses"
+        },
+        {
+            "_id": "49",
+            "reportHeadline": "White Collar Crime in Borno",
+            "reportText": "A white collar crime was reported in Borno on February 18, 2022.",
+            "state": "Borno",
+            "timeInterval": "24hrs",
+            "crimeCategory": "White Collar Crime"
+        },
+        {
+            "_id": "50",
+            "reportHeadline": "Financial Crimes in Cross River",
+            "reportText": "A financial crime was reported in Cross River on February 19, 2022.",
+            "state": "Cross River",
+            "timeInterval": "12hrs",    
+            "crimeCategory": "Financial Crimes"
+        },
+        {
+            "_id": "51",
+            "reportHeadline": "Violent Crime in Delta",
+            "reportText": "A violent crime was reported in Delta on February 20, 2022.",
+            "state": "Delta",
+            "timeInterval": "3days",
+            "crimeCategory": "Violent Crime"
+        },
+        {
+            "_id": "52",
+            "reportHeadline": "Property Theft in Ebonyi",
+            "reportText": "A property theft incident was reported in Ebonyi on February 21, 2022.",
+            "state": "Ebonyi",
+            "timeInterval": "1week",
+            "crimeCategory": "Property Theft/Damage"
+        },
+                {
+        "_id": "53",
+        "reportHeadline": "Drug Offenses in Edo",
+        "reportText": "A drug offense was reported in Edo on February 22, 2022.",
+        "state": "Edo",
+        "timeInterval": "24hrs",
+        "crimeCategory": "Drug Offenses"
+    },
+    {
+        "_id": "54",
+        "reportHeadline": "White Collar Crime in Ekiti",
+        "reportText": "A white collar crime was reported in Ekiti on February 23, 2022.",
+        "state": "Ekiti",
+        "timeInterval": "12hrs",
+        "crimeCategory": "White Collar Crime"
+    },
+    {
+        "_id": "55",
+        "reportHeadline": "Financial Crimes in Enugu",
+        "reportText": "A financial crime was reported in Enugu on February 24, 2022.",
+        "state": "Enugu",
+        "timeInterval": "3days",
+        "crimeCategory": "Financial Crimes"
+    },
+    {
+        "_id": "56",
+        "reportHeadline": "Violent Crime in Gombe",
+        "reportText": "A violent crime was reported in Gombe on February 25, 2022.",
+        "state": "Gombe",
+        "timeInterval": "1week",
+        "crimeCategory": "Violent Crime"
+    },
+    {
+        "_id": "57",
+        "reportHeadline": "Property Theft in Imo",
+        "reportText": "A property theft incident was reported in Imo on February 26, 2022.",
+        "state": "Imo",
+        "timeInterval": "24hrs",
+        "crimeCategory": "Property Theft/Damage"
+    },
+    {
+        "_id": "58",
+        "reportHeadline": "Drug Offenses in Jigawa",
+        "reportText": "A drug offense was reported in Jigawa on February 27, 2022.",
+        "state": "Jigawa",
+        "timeInterval": "12hrs",
+        "crimeCategory": "Drug Offenses"
+    },
+    {
+        "_id": "59",
+        "reportHeadline": "White Collar Crime in Kaduna",
+        "reportText": "A white collar crime was reported in Kaduna on February 28, 2022.",
+        "state": "Kaduna",
+        "timeInterval": "3days",
+        "crimeCategory": "White Collar Crime"
+    },
+    {
+        "_id": "60",
+        "reportHeadline": "Financial Crimes in Kano",
+        "reportText": "A financial crime was reported in Kano on March 1, 2022.",
+        "state": "Kano",
+        "timeInterval": "1week",
+        "crimeCategory": "Financial Crimes"
+    },
+    {
+        "_id": "61",
+        "reportHeadline": "Violent Crime in Katsina",
+        "reportText": "A violent crime was reported in Katsina on March 2, 2022.",
+        "state": "Katsina",
+        "timeInterval": "24hrs",
+        "crimeCategory": "Violent Crime"
+    },
+    {
+        "_id": "62",
+        "reportHeadline": "Property Theft in Kebbi",
+        "reportText": "A property theft incident was reported in Kebbi on March 3, 2022.",
+        "state": "Kebbi",
+        "timeInterval": "12hrs",
+        "crimeCategory": "Property Theft/Damage"
+    },
+    {
+        "_id": "63",
+        "reportHeadline": "Drug Offenses in Kogi",
+        "reportText": "A drug offense was reported in Kogi on March 4, 2022.",
+        "state": "Kogi",
+        "timeInterval": "3days",
+        "crimeCategory": "Drug Offenses"
+    },
+    {
+        "_id": "64",
+        "reportHeadline": "White Collar Crime in Kwara",
+        "reportText": "A white collar crime was reported in Kwara on March 5, 2022.",
+        "state": "Kwara",
+        "timeInterval": "1week",
+        "crimeCategory": "White Collar Crime"
+    },
+    {
+        "_id": "65",
+        "reportHeadline": "Financial Crimes in Lagos",
+        "reportText": "A financial crime was reported in Lagos on March 6, 2022.",
+        "state": "Lagos",
+        "timeInterval": "24hrs",
+        "crimeCategory": "Financial Crimes"
+    },
+    {
+        "_id": "66",
+        "reportHeadline": "Violent Crime in Nasarawa",
+        "reportText": "A violent crime was reported in Nasarawa on March 7, 2022.",
+        "state": "Nasarawa",
+        "timeInterval": "12hrs",
+        "crimeCategory": "Violent Crime"
+    },
+    {
+        "_id": "67",
+        "reportHeadline": "Property Theft in Niger",
+        "reportText": "A property theft incident was reported in Niger on March 8, 2022.",
+        "state": "Niger",
+        "timeInterval": "3days",
+        "crimeCategory": "Property Theft/Damage"
+    },
+    {
+        "_id": "68",
+        "reportHeadline": "Drug Offenses in Ogun",
+        "reportText": "A drug offense was reported in Ogun on March 9, 2022.",
+        "state": "Ogun",
+        "timeInterval": "1week",
+        "crimeCategory": "Drug Offenses"
+    },
+    {
+        "_id": "69",
+        "reportHeadline": "White Collar Crime in Ondo",
+        "reportText": "A white collar crime was reported in Ondo on March 10, 2022.",
+        "state": "Ondo",
+        "timeInterval": "24hrs",
+        "crimeCategory": "White Collar Crime"
+    },
+    {
+        "_id": "70",
+        "reportHeadline": "Financial Crimes in Osun",
+        "reportText": "A financial crime was reported in Osun on March 11, 2022.",
+        "state": "Osun",
+        "timeInterval": "12hrs",
+        "crimeCategory": "Financial Crimes"
+    },
+    {
+        "_id": "71",
+        "reportHeadline": "Violent Crime in Oyo",
+        "reportText": "A violent crime was reported in Oyo on March 12, 2022.",
+        "state": "Oyo",
+        "timeInterval": "3days",
+        "crimeCategory": "Violent Crime"
+    },
+    {
+        "_id": "72",
+        "reportHeadline": "Property Theft in Plateau",
+        "reportText": "A property theft incident was reported in Plateau on March 13, 2022.",
+        "state": "Plateau",
+        "timeInterval": "1week",
+        "crimeCategory": "Property Theft/Damage"
+    },
+    {
+        "_id": "73",
+        "reportHeadline": "Drug Offenses in Rivers",
+        "reportText": "A drug offense was reported in Rivers on March 14, 2022.",
+        "state": "Rivers",
+        "timeInterval": "24hrs",
+        "crimeCategory": "Drug Offenses"
+    },
+    {
+        "_id": "74",
+        "reportHeadline": "White Collar Crime in Sokoto",
+        "reportText": "A white collar crime was reported in Sokoto on March 15, 2022.",
+        "state": "Sokoto",
+        "timeInterval": "12hrs",
+        "crimeCategory": "White Collar Crime"
+    },
+    {
+        "_id": "75",
+        "reportHeadline": "Financial Crimes in Taraba",
+        "reportText": "A financial crime was reported in Taraba on March 16, 2022.",
+        "state": "Taraba",
+        "timeInterval": "3days",
+        "crimeCategory": "Financial Crimes"
+    },
+    {
+        "_id": "76",
+        "reportHeadline": "Violent Crime in Yobe",
+        "reportText": "A violent crime was reported in Yobe on March 17, 2022.",
+        "state": "Yobe",
+        "timeInterval": "1week",
+        "crimeCategory": "Violent Crime"
+    },
+    {
+        "_id": "77",
+        "reportHeadline": "Property Theft in Zamfara",
+        "reportText": "A property theft incident was reported in Zamfara on March 18, 2022.",
+        "state": "Zamfara",
+        "timeInterval": "24hrs",
+        "crimeCategory": "Property Theft/Damage"
+    },
+    {
+        "_id": "78",
+        "reportHeadline": "Drug Offenses in Abia",
+        "reportText": "A drug offense was reported in Abia on March 19, 2022.",
+        "state": "Abia",
+        "timeInterval": "12hrs",
+        "crimeCategory": "Drug Offenses"
+    },
+    {
+        "_id": "79",
+        "reportHeadline": "White Collar Crime in Adamawa",
+        "reportText": "A white collar crime was reported in Adamawa on March 20, 2022.",
+        "state": "Adamawa",
+        "timeInterval": "3days",
+        "crimeCategory": "White Collar Crime"
+    },
+    {
+        "_id": "80",
+        "reportHeadline": "Financial Crimes in Akwa Ibom",
+        "reportText": "A financial crime was reported in Akwa Ibom on March 21, 2022.",
+        "state": "Akwa Ibom",
+        "timeInterval": "1week",
+        "crimeCategory": "Financial Crimes"
+    },
+    {
+        "_id": "81",
+        "reportHeadline": "Violent Crime in Anambra",
+        "reportText": "A violent crime was reported in Anambra on March 22, 2022.",
+        "state": "Anambra",
+        "timeInterval": "24hrs",
+        "crimeCategory": "Violent Crime"
+    },
+    {
+        "_id": "82",
+        "reportHeadline": "Property Theft in Bauchi",
+        "reportText": "A property theft incident was reported in Bauchi on March 23, 2022.",
+        "state": "Bauchi",
+        "timeInterval": "12hrs",
+        "crimeCategory": "Property Theft/Damage"
+    },
+    {
+        "_id": "83",
+        "reportHeadline": "Drug Offenses in Bayelsa",
+        "reportText": "A drug offense was reported in Bayelsa on March 24, 2022.",
+        "state": "Bayelsa",
+        "timeInterval": "3days",
+        "crimeCategory": "Drug Offenses"
+    },
+    {
+        "_id": "84",
+        "reportHeadline": "White Collar Crime in Benue",
+        "reportText": "A white collar crime was reported in Benue on March 25, 2022.",
+        "state": "Benue",
+        "timeInterval": "1week",
+        "crimeCategory": "White Collar Crime"
+    },
+    {
+        "_id": "85",
+        "reportHeadline": "Financial Crimes in Borno",
+        "reportText": "A financial crime was reported in Borno on March 26, 2022.",
+        "state": "Borno",
+        "timeInterval": "24hrs",
+        "crimeCategory": "Financial Crimes"
+    },
+    {
+        "_id": "86",
+        "reportHeadline": "Violent Crime in Cross River",
+        "reportText": "A violent crime was reported in Cross River on March 27, 2022.",
+        "state": "Cross River",
+        "timeInterval": "12hrs",
+        "crimeCategory": "Violent Crime"
+    },
+    {
+        "_id": "87",
+        "reportHeadline": "Property Theft in Delta",
+        "reportText": "A property theft incident was reported in Delta on March 28, 2022.",
+        "state": "Delta",
+        "timeInterval": "3days",
+        "crimeCategory": "Property Theft/Damage"
+    },
+    {
+        "_id": "88",
+        "reportHeadline": "Drug Offenses in Ebonyi",
+        "reportText": "A drug offense was reported in Ebonyi on March 29, 2022.",
+        "state": "Ebonyi",
+        "timeInterval": "1week",
+        "crimeCategory": "Drug Offenses"
+    },
+    {
+        "_id": "89",
+        "reportHeadline": "White Collar Crime in Edo",
+        "reportText": "A white collar crime was reported in Edo on March 30, 2022.",
+        "state": "Edo",
+        "timeInterval": "24hrs",
+        "crimeCategory": "White Collar Crime"
+    },
+    {
+        "_id": "90",
+        "reportHeadline": "Financial Crimes in Ekiti",
+        "reportText": "A financial crime was reported in Ekiti on March 31, 2022.",
+        "state": "Ekiti",
+        "timeInterval": "12hrs",
+        "crimeCategory": "Financial Crimes"
+    },
+    {
+        "_id": "91",
+        "reportHeadline": "Violent Crime in Enugu",
+        "reportText": "A violent crime was reported in Enugu on April 1, 2022.",
+        "state": "Enugu",
+        "timeInterval": "3days",
+        "crimeCategory": "Violent Crime"
+    },
+    {
+        "_id": "92",
+        "reportHeadline": "Property Theft in Gombe",
+        "reportText": "A property theft incident was reported in Gombe on April 2, 2022.",
+        "state": "Gombe",
+        "timeInterval": "1week",
+        "crimeCategory": "Property Theft/Damage"
+    },
+    {
+        "_id": "93",
+        "reportHeadline": "Drug Offenses in Imo",
+        "reportText": "A drug offense was reported in Imo on April 3, 2022.",
+        "state": "Imo",
+        "timeInterval": "24hrs",
+        "crimeCategory": "Drug Offenses"
+    },
+    {
+        "_id": "94",
+        "reportHeadline": "White Collar Crime in Jigawa",
+        "reportText": "A white collar crime was reported in Jigawa on April 4, 2022.",
+        "state": "Jigawa",
+        "timeInterval": "12hrs",
+        "crimeCategory": "White Collar Crime"
+    },
+    {
+        "_id": "95",
+        "reportHeadline": "Financial Crimes in Kaduna",
+        "reportText": "A financial crime was reported in Kaduna on April 5, 2022.",
+        "state": "Kaduna",
+        "timeInterval": "3days",
+        "crimeCategory": "Financial Crimes"
+    },
+    {
+        "_id": "96",
+        "reportHeadline": "Violent Crime in Kano",
+        "reportText": "A violent crime was reported in Kano on April 6, 2022.",
+        "state": "Kano",
+        "timeInterval": "1week",
+        "crimeCategory": "Violent Crime"
+    },
+    {
+        "_id": "97",
+        "reportHeadline": "Property Theft in Katsina",
+        "reportText": "A property theft incident was reported in Katsina on April 7, 2022.",
+        "state": "Katsina",
+        "timeInterval": "24hrs",
+        "crimeCategory": "Property Theft/Damage"
+    },
+    {
+        "_id": "98",
+        "reportHeadline": "Drug Offenses in Kebbi",
+        "reportText": "A drug offense was reported in Kebbi on April 8, 2022.",
+        "state": "Kebbi",
+        "timeInterval": "12hrs",
+        "crimeCategory": "Drug Offenses"
+    },
+    {
+        "_id": "99",
+        "reportHeadline": "White Collar Crime in Kogi",
+        "reportText": "A white collar crime was reported in Kogi on April 9, 2022.",
+        "state": "Kogi",
+        "timeInterval": "3days",
+        "crimeCategory": "White Collar Crime"
+    },
+    {
+        "_id": "100",
+        "reportHeadline": "Financial Crimes in Kwara",
+        "reportText": "A financial crime was reported in Kwara on April 10, 2022.",
+        "state": "Kwara",
+        "timeInterval": "1week",
+        "crimeCategory": "Financial Crimes"
+    }
+];
+        const reportList = document.getElementById('report-list');
+
+// Function to display reports
+function displayReports(reports) {
+    reportList.innerHTML = ''; // Clear existing report list
+    reports.forEach(report => {
+        const reportContainer = document.createElement('div'); // Create a container element
+        reportContainer.classList.add('report-container'); // Add a class to the container element
+
+        const reportElement = document.createElement('li');
+        reportElement.classList.add('report');
+
+        reportElement.innerHTML = `
+            <h3>${report.reportHeadline}</h3>
+            <p>${report.reportText.substring(0, 100)}...</p>
+            <a href="#" onclick="showFullReport(this.parentNode)">Read More</a>
+            <div class="full-report">
+                <h4>Full Report:</h4>
+                <p>State: ${report.state}</p>
+                <p>Time Interval: ${report.timeInterval}</p>
+                <p>Crime Category: ${report.crimeCategory}</p>
+                <p>Report Text: ${report.reportText}</p>
+            </div>
+        `;
+
+        reportContainer.appendChild(reportElement); // Add the report element to the container element
+        reportList.appendChild(reportContainer); // Add the container element to the report list
+    });
+}
+
+        // Display all reports on page load
+        displayReports(reports);
+
+        // Add event listener to filter button
+        document.querySelector('button[type="submit"]').addEventListener('click', function(event) {
+            event.preventDefault();
+
+            const state = document.getElementById('state').value;
+            const timeInterval = document.getElementById('timeInterval').value;
+            const crimeCategory = document.getElementById('crimeCategory').value;
+
+            const filteredReports = reports.filter(report => {
+                if (state && report.state !== state) return false;
+                if (timeInterval && report.timeInterval !== timeInterval) return false;
+                if (crimeCategory && report.crimeCategory !== crimeCategory) return false;
+                return true;
+            });
+
+            displayReports(filteredReports);
+        });
+
+        // Function to show full report details
+        function showFullReport(element) {
+            const fullReportElement = element.querySelector('.full-report');
+            fullReportElement.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
+
